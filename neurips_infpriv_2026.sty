@@ -1,0 +1,263 @@
+% neurips_infpriv_2026.sty
+% Official style file for NeurIPS 2026 Workshop on Inference-Time AI Privacy (InfPriv 2026)
+% Camera-ready papers should use:
+%   \usepackage[dblblindworkshop, final]{neurips_infpriv_2026}
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{neurips_infpriv_2026}[2026/09/01 NeurIPS InfPriv 2026 Workshop submission/camera-ready style]
+
+% declare final option, which creates camera-ready copy
+\newif\if@neuripsfinal\@neuripsfinalfalse
+\DeclareOption{final}{%
+  \@neuripsfinaltrue
+}
+
+% declare preprint option, which creates a preprint version ready for
+% upload to, e.g., arXiv
+\newif\if@preprint\@preprintfalse
+\DeclareOption{preprint}{%
+  \@preprinttrue
+}
+
+% declare workshop option
+\newif\if@workshop\@workshoptrue
+\DeclareOption{dblblindworkshop}{%
+  \@workshoptrue
+}
+
+% declare nonatbib option, which does not load natbib in case of
+% package clash (users can pass options to natbib via
+% \PassOptionsToPackage)
+\newif\if@natbib\@natbibtrue
+\DeclareOption{nonatbib}{%
+  \@natbibfalse
+}
+
+\ProcessOptions\relax
+
+% determine whether this is an anonymized submission
+\newif\if@submission\@submissiontrue
+\if@neuripsfinal
+  \@submissionfalse
+\fi
+\if@preprint
+  \@submissionfalse
+\fi
+
+% fonts
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\sfdefault}{phv}
+
+% change this every year for notice string at bottom
+\newcommand{\@neuripsordinal}{NeurIPS 2026}
+\newcommand{\@neuripsyear}{2026}
+\newcommand{\@neuripslocation}{Sydney, Australia}
+\newcommand{\@neuripsnotice}{%
+  NeurIPS 2026 Workshop on Beyond Private Training: The New Landscape of AI Privacy (InfPriv 2026), \@neuripslocation.%
+}
+
+% handle tweaks for camera-ready copy vs. submission copy
+\if@submission
+  \newcommand{\@noticestring}{%
+    Submitted to \@neuripsordinal{} Workshop on Beyond Private Training: The New Landscape of AI Privacy (InfPriv 2026). Do not distribute.%
+  }
+\else
+  \if@preprint
+    \newcommand{\@noticestring}{%
+      Preprint. Under review.%
+    }
+  \else
+    \newcommand{\@noticestring}{%
+      \@neuripsnotice%
+    }
+  \fi
+\fi
+
+% load natbib unless told otherwise
+\if@natbib
+  \RequirePackage{natbib}
+\fi
+
+% set page geometry
+\usepackage[verbose=true,letterpaper]{geometry}
+\AtBeginDocument{
+  \newgeometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+  }
+  \@ifpackageloaded{fullpage}
+    {\PackageWarning{neurips_infpriv_2026}{fullpage package not allowed! Overwriting formatting.}}
+    {}
+}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\flushbottom
+\sloppy
+
+% font sizes with LaTeX2e
+\def\normalsize{%
+  \@setsize\normalsize{12pt}\xpt\@xpt
+  \abovedisplayskip=10pt plus 2pt minus 5pt
+  \abovedisplayshortskip=0pt plus 3pt
+  \belowdisplayskip=\abovedisplayskip
+  \belowdisplayshortskip=6pt plus 3pt minus 3pt
+  \let\@listi\@listI}
+\def\small{%
+  \@setsize\small{11pt}\ixpt\@ixpt
+  \abovedisplayskip=8.5pt plus 3pt minus 4pt
+  \abovedisplayshortskip=0pt plus 2pt
+  \belowdisplayskip=\abovedisplayskip
+  \belowdisplayshortskip=4pt plus 2pt minus 2pt
+  \def\@listi{\leftmargin\leftmargini
+              \topsep=4pt plus 2pt minus 2pt
+              \parsep=2pt plus 1pt minus 1pt
+              \itemsep=\parsep}}
+\def\footnotesize{%
+  \@setsize\footnotesize{10pt}\viiipt\@viiipt
+  \abovedisplayskip=6pt plus 2pt minus 4pt
+  \abovedisplayshortskip=0pt plus 1pt
+  \belowdisplayskip=\abovedisplayskip
+  \belowdisplayshortskip=3pt plus 1pt minus 2pt
+  \def\@listi{\leftmargin\leftmargini
+              \topsep=3pt plus 1pt minus 1pt
+              \parsep=2pt plus 1pt minus 1pt
+              \itemsep=\parsep}}
+\def\scriptsize{\@setsize\scriptsize{9.5pt}\viipt\@viipt}
+\def\tiny{\@setsize\tiny{7pt}\vpt\@vpt}
+\def\large{\@setsize\large{14pt}\xiipt\@xiipt}
+\def\Large{\@setsize\Large{16pt}\xivpt\@xivpt}
+\def\LARGE{\@setsize\LARGE{20pt}\xviipt\@xviipt}
+\def\huge{\@setsize\huge{23pt}\xxpt\@xxpt}
+\def\Huge{\@setsize\Huge{28pt}\xxvpt\@xxvpt}
+
+% sections with less space
+\providecommand{\section}{}
+\renewcommand{\section}{%
+  \@startsection{section}{1}{\z@}%
+                {-2.0ex plus -0.5ex minus -0.2ex}%
+                {1.5ex plus 0.3ex minus 0.2ex}%
+                {\large\bf\raggedright}%
+}
+\providecommand{\subsection}{}
+\renewcommand{\subsection}{%
+  \@startsection{subsection}{2}{\z@}%
+                {-1.8ex plus -0.5ex minus -0.2ex}%
+                {0.8ex plus .2ex}%
+                {\normalsize\bf\raggedright}%
+}
+\providecommand{\subsubsection}{}
+\renewcommand{\subsubsection}{%
+  \@startsection{subsubsection}{3}{\z@}%
+                {-1.5ex plus -0.5ex minus -0.2ex}%
+                {0.5ex plus .2ex}%
+                {\normalsize\bf\raggedright}%
+}
+\providecommand{\paragraph}{}
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{\z@}%
+                {1.5ex plus 0.5ex minus 0.2ex}%
+                {-1em}%
+                {\normalsize\bf}%
+}
+\providecommand{\subparagraph}{}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{\z@}%
+                {1.5ex plus 0.5ex minus 0.2ex}%
+                {-1em}%
+                {\normalsize\bf}%
+}
+\providecommand{\subsubsubsection}{}
+\renewcommand{\subsubsubsection}{%
+  \vskip5pt{\noindent\normalsize\rm\raggedright}%
+}
+
+% footnotes
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width 2in
+  \kern 2.6pt
+}
+
+% list environments
+\setlength{\topsep}{4pt plus 1pt minus 2pt}
+\setlength{\partopsep}{1pt plus 0.5pt minus 0.5pt}
+\setlength{\itemsep}{2pt plus 1pt minus 0.5pt}
+\setlength{\parsep}{2pt plus 1pt minus 0.5pt}
+\setlength{\leftmargin}{2em}
+\setlength{\leftmargini}{\leftmargin}
+\setlength{\leftmarginii}{2em}
+\setlength{\leftmarginiii}{1.5em}
+\setlength{\leftmarginiv}{1.0em}
+\setlength{\leftmarginv}{0.5em}
+
+% title & author formatting
+\def\maketitle{%
+  \par
+  \begingroup
+    \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
+    \def\@makefnmark{\hbox to\z@{$\m@th^{\@thefnmark}$\hss}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+            \hbox to1.8em{\hss$\m@th^{\@thefnmark}$}##1}%
+    \if@twocolumn
+      \twocolumn[\@maketitle]%
+    \else
+      \newpage
+      \global\@topnum\z@
+      \@maketitle
+    \fi
+    \thispagestyle{firstpage}\@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \let\maketitle\relax
+  \let\@maketitle\relax
+  \gdef\@thanks{}\gdef\@author{}\gdef\@title{}
+  \let\thanks\relax
+}
+
+\def\@maketitle{%
+  \vbox to \vsize{%
+    \hsize\textwidth
+    \linewidth\hsize
+    \vskip 0.1in
+    \toptitlebar
+    \centering
+    {\LARGE\bf \@title\par}
+    \bottomtitlebar
+    \if@submission
+      \begin{tabular}[t]{c}\bf Anonymous Authors \\ Affiliations withheld for review \end{tabular}%
+    \else
+      \def\And{%
+        \end{tabular}\hfil\linebreak[0]\hfil
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24pt}\ignorespaces}%
+      \def\AND{%
+        \end{tabular}\hfil\linebreak[4]\hfil
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24pt}\ignorespaces}%
+      \begin{tabular}[t]{c}\bf\rule{\z@}{24pt}\@author\end{tabular}%
+    \fi
+    \vskip 0.3in \@abstract
+    \vfill
+  }%
+}
+
+\def\toptitlebar{\hrule height4pt\vskip .25in\vskip-\parskip}
+\def\bottomtitlebar{\vskip .29in\vskip-\parskip\hrule height1pt\vskip .09in}
+
+\renewenvironment{abstract}%
+  {\centerline{\large\bf Abstract}\vspace{0.5ex}%
+   \begin{quote}}%
+  {\par\end{quote}\vskip 1ex}
+
+% first page footer rule and text
+\def\ps@firstpage{%
+  \let\@oddhead\@empty
+  \let\@evenhead\@empty
+  \def\@oddfoot{\normalfont\footnotesize\hfil\begin{tabular}{c}\rule{\textwidth}{0.5pt}\\\@noticestring\end{tabular}\hfil}%
+  \let\@evenfoot\@oddfoot
+}
+
+\endinput

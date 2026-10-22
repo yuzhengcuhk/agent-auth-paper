@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the accompanying paper."
+title: "KITA: Key-Isolated Threshold Authorization for LLM Agents"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Zheng
+    given-names: Yu
+    affiliation: University of California, Berkeley
+  - family-names: Zhang
+    given-names: Qizhi
+    affiliation: Independent Researcher
+preferred-citation:
+  type: article
+  title: "From Review to Authorization: Key-Isolated Threshold Signing for LLM Agents"
+  authors:
+    - family-names: Zheng
+      given-names: Yu
+    - family-names: Zhang
+      given-names: Qizhi
+  year: 2026
+

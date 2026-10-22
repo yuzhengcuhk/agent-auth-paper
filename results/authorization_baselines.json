@@ -1,0 +1,227 @@
+{
+  "experiment": "controlled authorization-boundary fault injection",
+  "reviewer_backend": "scripted decisions; no model calls",
+  "threshold": 2,
+  "committee_size": 3,
+  "design_scenario_checks": 28,
+  "all_expected_outcomes_observed": true,
+  "scope": "In-process fixtures with real BLS and HMAC checks; no isolation exploit, model-risk estimate, or latency comparison.",
+  "cases": [
+    {
+      "scenario": "valid_two_approvals",
+      "approval_indices": [
+        1,
+        2
+      ],
+      "custody_breach": false,
+      "action_substitution": false,
+      "replay": false,
+      "accepted": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": true,
+        "kita": true
+      },
+      "first_execution": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": true,
+        "kita": true
+      },
+      "kita_valid_indices": [
+        1,
+        2
+      ],
+      "expected": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": true,
+        "kita": true
+      },
+      "matches_expected": true
+    },
+    {
+      "scenario": "unsafe_no_approval",
+      "approval_indices": [],
+      "custody_breach": false,
+      "action_substitution": false,
+      "replay": false,
+      "accepted": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "first_execution": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "kita_valid_indices": [],
+      "expected": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "matches_expected": true
+    },
+    {
+      "scenario": "unsafe_one_false_approval",
+      "approval_indices": [
+        1
+      ],
+      "custody_breach": false,
+      "action_substitution": false,
+      "replay": false,
+      "accepted": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "first_execution": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "kita_valid_indices": [
+        1
+      ],
+      "expected": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "matches_expected": true
+    },
+    {
+      "scenario": "unsafe_two_false_approvals",
+      "approval_indices": [
+        1,
+        2
+      ],
+      "custody_breach": false,
+      "action_substitution": false,
+      "replay": false,
+      "accepted": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": true,
+        "kita": true
+      },
+      "first_execution": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": true,
+        "kita": true
+      },
+      "kita_valid_indices": [
+        1,
+        2
+      ],
+      "expected": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": true,
+        "kita": true
+      },
+      "matches_expected": true
+    },
+    {
+      "scenario": "one_custody_domain_breached",
+      "approval_indices": [],
+      "custody_breach": true,
+      "action_substitution": false,
+      "replay": false,
+      "accepted": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "first_execution": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "kita_valid_indices": [
+        1
+      ],
+      "expected": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "matches_expected": true
+    },
+    {
+      "scenario": "post_review_substitution",
+      "approval_indices": [
+        1,
+        2
+      ],
+      "custody_breach": false,
+      "action_substitution": true,
+      "replay": false,
+      "accepted": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "first_execution": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "kita_valid_indices": [],
+      "expected": {
+        "agent_key": true,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "matches_expected": true
+    },
+    {
+      "scenario": "replay",
+      "approval_indices": [
+        1,
+        2
+      ],
+      "custody_breach": false,
+      "action_substitution": false,
+      "replay": true,
+      "accepted": {
+        "agent_key": false,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "first_execution": {
+        "agent_key": true,
+        "central_signer": true,
+        "direct_approvals": true,
+        "kita": true
+      },
+      "kita_valid_indices": [
+        1,
+        2
+      ],
+      "expected": {
+        "agent_key": false,
+        "central_signer": false,
+        "direct_approvals": false,
+        "kita": false
+      },
+      "matches_expected": true
+    }
+  ]
+}

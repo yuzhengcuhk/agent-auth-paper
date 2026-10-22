@@ -1,0 +1,44 @@
+{
+  "backend": "scripted deterministic reviewer at the LLM interface",
+  "threshold": "2-of-3",
+  "tests_passed": 6,
+  "tests_total": 6,
+  "elapsed_ms": 8265.241,
+  "tests": [
+    {
+      "name": "quorum_authorizes",
+      "passed": true,
+      "detail": "2-of-3 final signature verifies"
+    },
+    {
+      "name": "below_threshold_blocks",
+      "passed": true,
+      "detail": "one valid share is insufficient"
+    },
+    {
+      "name": "digest_mismatch_blocks",
+      "passed": true,
+      "detail": "gateway rejects mismatched approval"
+    },
+    {
+      "name": "action_substitution_blocks",
+      "passed": true,
+      "detail": "amount change invalidates final signature"
+    },
+    {
+      "name": "replay_blocks",
+      "passed": true,
+      "detail": "spent nonce rejects the second execution"
+    },
+    {
+      "name": "identical_key_isolated_review_input",
+      "passed": true,
+      "detail": "same request bytes; no signing-key fields"
+    }
+  ],
+  "limitations": [
+    "No claim about LLM semantic accuracy is made from scripted tests.",
+    "Signer isolation and authenticated channels are modeled in one process.",
+    "Test setup uses dealer-generated Shamir shares rather than DKG."
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "implementation": "py_ecc pure-Python reference implementation",
+  "setup": "dealer-generated Shamir shares (DKG/VSS not implemented)",
+  "rng": "deterministic benchmark-only PRNG, seed=7",
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "py_ecc": "8.0.0"
+  },
+  "rows": [
+    {
+      "n": 3,
+      "t": 2,
+      "partial_sign_ms": {
+        "mean": 4.907,
+        "median": 4.754,
+        "stdev": 0.578,
+        "repetitions": 25
+      },
+      "partial_verify_ms": {
+        "mean": 558.237,
+        "median": 558.407,
+        "stdev": 1.44,
+        "repetitions": 5
+      },
+      "aggregate_ms": {
+        "mean": 5.045,
+        "median": 5.049,
+        "stdev": 0.036,
+        "repetitions": 25
+      },
+      "final_verify_ms": {
+        "mean": 586.684,
+        "median": 563.304,
+        "stdev": 40.523,
+        "repetitions": 5
+      },
+      "signature_bytes": 48,
+      "partial_signature_bytes": 48,
+      "public_key_bytes": 96,
+      "signing_rounds": 1,
+      "malformed_partial_rejected": true
+    },
+    {
+      "n": 5,
+      "t": 3,
+      "partial_sign_ms": {
+        "mean": 5.708,
+        "median": 5.109,
+        "stdev": 2.99,
+        "repetitions": 25
+      },
+      "partial_verify_ms": {
+        "mean": 565.976,
+        "median": 562.457,
+        "stdev": 5.735,
+        "repetitions": 5
+      },
+      "aggregate_ms": {
+        "mean": 5.536,
+        "median": 5.539,
+        "stdev": 0.038,
+        "repetitions": 25
+      },
+      "final_verify_ms": {
+        "mean": 561.076,
+        "median": 561.728,
+        "stdev": 1.512,
+        "repetitions": 5
+      },
+      "signature_bytes": 48,
+      "partial_signature_bytes": 48,
+      "public_key_bytes": 96,
+      "signing_rounds": 1,
+      "malformed_partial_rejected": true
+    },
+    {
+      "n": 7,
+      "t": 5,
+      "partial_sign_ms": {
+        "mean": 5.058,
+        "median": 5.062,
+        "stdev": 0.035,
+        "repetitions": 25
+      },
+      "partial_verify_ms": {
+        "mean": 567.418,
+        "median": 562.662,
+        "stdev": 11.424,
+        "repetitions": 5
+      },
+      "aggregate_ms": {
+        "mean": 11.367,
+        "median": 11.232,
+        "stdev": 0.577,
+        "repetitions": 25
+      },
+      "final_verify_ms": {
+        "mean": 555.983,
+        "median": 556.445,
+        "stdev": 2.371,
+        "repetitions": 5
+      },
+      "signature_bytes": 48,
+      "partial_signature_bytes": 48,
+      "public_key_bytes": 96,
+      "signing_rounds": 1,
+      "malformed_partial_rejected": true
+    },
+    {
+      "n": 10,
+      "t": 7,
+      "partial_sign_ms": {
+        "mean": 5.054,
+        "median": 5.062,
+        "stdev": 0.028,
+        "repetitions": 25
+      },
+      "partial_verify_ms": {
+        "mean": 558.328,
+        "median": 558.017,
+        "stdev": 3.911,
+        "repetitions": 5
+      },
+      "aggregate_ms": {
+        "mean": 16.724,
+        "median": 16.593,
+        "stdev": 0.601,
+        "repetitions": 25
+      },
+      "final_verify_ms": {
+        "mean": 554.668,
+        "median": 554.025,
+        "stdev": 3.185,
+        "repetitions": 5
+      },
+      "signature_bytes": 48,
+      "partial_signature_bytes": 48,
+      "public_key_bytes": 96,
+      "signing_rounds": 1,
+      "malformed_partial_rejected": true
+    },
+    {
+      "n": 16,
+      "t": 11,
+      "partial_sign_ms": {
+        "mean": 5.117,
+        "median": 5.013,
+        "stdev": 0.551,
+        "repetitions": 25
+      },
+      "partial_verify_ms": {
+        "mean": 560.18,
+        "median": 560.646,
+        "stdev": 3.779,
+        "repetitions": 5
+      },
+      "aggregate_ms": {
+        "mean": 28.711,
+        "median": 28.532,
+        "stdev": 0.928,
+        "repetitions": 25
+      },
+      "final_verify_ms": {
+        "mean": 565.716,
+        "median": 561.885,
+        "stdev": 13.725,
+        "repetitions": 5
+      },
+      "signature_bytes": 48,
+      "partial_signature_bytes": 48,
+      "public_key_bytes": 96,
+      "signing_rounds": 1,
+      "malformed_partial_rejected": true
+    },
+    {
+      "n": 24,
+      "t": 17,
+      "partial_sign_ms": {
+        "mean": 4.936,
+        "median": 4.803,
+        "stdev": 0.533,
+        "repetitions": 25
+      },
+      "partial_verify_ms": {
+        "mean": 556.257,
+        "median": 554.964,
+        "stdev": 3.283,
+        "repetitions": 5
+      },
+      "aggregate_ms": {
+        "mean": 47.746,
+        "median": 45.833,
+        "stdev": 4.238,
+        "repetitions": 25
+      },
+      "final_verify_ms": {
+        "mean": 567.63,
+        "median": 563.211,
+        "stdev": 13.539,
+        "repetitions": 5
+      },
+      "signature_bytes": 48,
+      "partial_signature_bytes": 48,
+      "public_key_bytes": 96,
+      "signing_rounds": 1,
+      "malformed_partial_rejected": true
+    },
+    {
+      "n": 32,
+      "t": 22,
+      "partial_sign_ms": {
+        "mean": 5.042,
+        "median": 4.93,
+        "stdev": 0.584,
+        "repetitions": 25
+      },
+      "partial_verify_ms": {
+        "mean": 558.746,
+        "median": 559.518,
+        "stdev": 2.296,
+        "repetitions": 5
+      },
+      "aggregate_ms": {
+        "mean": 62.039,
+        "median": 61.619,
+        "stdev": 1.152,
+        "repetitions": 25
+      },
+      "final_verify_ms": {
+        "mean": 555.971,
+        "median": 554.875,
+        "stdev": 4.443,
+        "repetitions": 5
+      },
+      "signature_bytes": 48,
+      "partial_signature_bytes": 48,
+      "public_key_bytes": 96,
+      "signing_rounds": 1,
+      "malformed_partial_rejected": true
+    }
+  ]
+}

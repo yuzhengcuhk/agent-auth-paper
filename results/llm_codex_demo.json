@@ -1,0 +1,44 @@
+{
+  "backend": "Codex CLI non-interactive structured output",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "threshold": "2-of-3",
+  "review_input_sha256": "56334bde60bc8c9967f9d060026f400c6e8193691f8f1d1866335a4a749c7942",
+  "decisions": [
+    {
+      "outcome": "approve",
+      "message_digest": "6faf1ea66516fa11f8d21052485533503f3b624175fbb636bc7e50ce57221910",
+      "reason_codes": [],
+      "rationale": "The payment is within the USD 1500 limit, uses an allowed merchant, and includes valid merchant-authenticated evidence."
+    },
+    {
+      "outcome": "approve",
+      "message_digest": "6faf1ea66516fa11f8d21052485533503f3b624175fbb636bc7e50ce57221910",
+      "reason_codes": [],
+      "rationale": "The payment complies with policy: the merchant is allowed, the currency is USD, the amount is within the $1,500 maximum, the authorization is unexpired, and the supplied evidence reports a valid merchant signature."
+    },
+    {
+      "outcome": "approve",
+      "message_digest": "6faf1ea66516fa11f8d21052485533503f3b624175fbb636bc7e50ce57221910",
+      "reason_codes": [
+        "POLICY_COMPLIANT",
+        "AUTHENTICATED_EVIDENCE_PRESENT"
+      ],
+      "rationale": "The payment is for an allowed merchant, uses USD, and the amount of 1299 is within the 1500 maximum. The supplied evidence indicates a valid merchant signature, and the authorization has not expired."
+    }
+  ],
+  "reviewer_latency_seconds": [
+    6.097,
+    6.244,
+    8.123
+  ],
+  "signer_indices": [
+    1,
+    2
+  ],
+  "threshold_met": true,
+  "changed_action_accepted": false,
+  "first_execution_accepted": true,
+  "same_nonce_replay_accepted": false,
+  "scope_note": "Reviewer decisions are live Codex model outputs. Threshold-BLS signing, share verification, combination, exact-action verification, and replay checks are executed by the prototype. This single run is not an accuracy benchmark."
+}
