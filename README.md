@@ -1,7 +1,9 @@
 # KITA: Key-Isolated Threshold Authorization for LLM Agents
 
 Code and experiment artifact for *From Review to Authorization: Key-Isolated
-Threshold Signing for LLM Agents* by Yu Zheng and Qizhi Zhang.
+Threshold Signing for LLM Agents* by Yu Zheng and Qizhi Zhang, presented at the
+NeurIPS 2026 Workshop on Beyond Private Training: The New Landscape of AI
+Privacy (InfPriv 2026). [arXiv:2609.05901](https://arxiv.org/pdf/2609.05901)
 
 KITA separates LLM review from signing authority. Reviewers return structured
 decisions; isolated signer services release threshold-BLS shares only for
@@ -69,12 +71,14 @@ process and uses deterministic dealer-generated Shamir shares for test setup.
 If you use this artifact, please cite the accompanying paper:
 
 ```bibtex
-@misc{zheng2026review,
-  title  = {From Review to Authorization: Key-Isolated Threshold Signing for LLM Agents},
-  author = {Zheng, Yu and Zhang, Qizhi},
-  year   = {2026},
-  note   = {Manuscript and reproducibility artifact},
-  url    = {https://github.com/yuzhengcuhk/agent-auth-paper}
+@inproceedings{zheng2026review,
+  title     = {From Review to Authorization: Key-Isolated Threshold Signing for LLM Agents},
+  author    = {Zheng, Yu and Zhang, Qizhi},
+  booktitle = {NeurIPS 2026 Workshop on Beyond Private Training: The New Landscape of AI Privacy (InfPriv 2026)},
+  year      = {2026},
+  eprint    = {2609.05901},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/pdf/2609.05901}
 }
 ```
 
