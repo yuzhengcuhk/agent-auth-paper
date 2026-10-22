@@ -64,7 +64,22 @@ not measurements of production LLM quality, isolation, or attack frequency.
 The implementation models signer isolation and authenticated channels in one
 process and uses deterministic dealer-generated Shamir shares for test setup.
 
-## Citation and license
+## Citation
 
-Citation metadata is in [CITATION.cff](CITATION.cff). The code and artifact are
-released under the [MIT License](LICENSE).
+If you use this artifact, please cite the accompanying paper:
+
+```bibtex
+@misc{zheng2026review,
+  title  = {From Review to Authorization: Key-Isolated Threshold Signing for LLM Agents},
+  author = {Zheng, Yu and Zhang, Qizhi},
+  year   = {2026},
+  note   = {Manuscript and reproducibility artifact},
+  url    = {https://github.com/yuzhengcuhk/agent-auth-paper}
+}
+```
+
+Machine-readable citation metadata is available in [CITATION.cff](CITATION.cff).
+
+## License
+
+The code and artifact are released under the [MIT License](LICENSE).
