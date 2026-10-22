@@ -1,1 +1,47 @@
-m«ëˆ§½©buªàºg§¶­Š	è­å,j›jÇºà7an{¦Š)ßŠW¨¢ë_ŠW›n·š‘ºÞjG§r‡^v‹­¦ën¦)í¢X§zÊ•éà¶î˜7]yÊy×œ¡×¢ž›­†¥¥Ø¬¦V²¶¬™ë,j¢Šzn¶)éº×â•ç^}«¥µú+²×bžŠ.¶›­¢ëiº×â•ç^}«¥µú+²×hº
+# OS and editor files
+.DS_Store
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mplconfig/
+
+# Local secrets and live-model outputs
+.env
+.env.*
+!.env.example
+results/llm_live_*.json
+
+# LaTeX build products (the two paper figures remain tracked)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+main.pdf
+anonymous_workshop.pdf
+infpriv_final.pdf
+
+# Local scratch space and release bundles
+tmp/
+output/
+build/
+dist/
+
