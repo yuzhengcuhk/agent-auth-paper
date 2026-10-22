@@ -10,9 +10,6 @@ decisions; isolated signer services release threshold-BLS shares only for
 authenticated approvals of the same canonical action; and an executor accepts
 the action only after final-signature, expiry, and replay checks.
 
-This repository intentionally contains the experiment artifact only. The paper
-source is not included.
-
 ## Quick start
 
 Python 3.9 or newer is required. The default workflow is offline after
