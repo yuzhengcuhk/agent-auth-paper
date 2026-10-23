@@ -10,6 +10,11 @@ decisions; isolated signer services release threshold-BLS shares only for
 authenticated approvals of the same canonical action; and an executor accepts
 the action only after final-signature, expiry, and replay checks.
 
+![KITA architecture: LLM review, isolated threshold signers, and verified execution](assets/kita-architecture.png)
+
+*KITA separates model review, isolated threshold-signing domains, and final
+verification and execution.*
+
 ## Quick start
 
 Python 3.9 or newer is required. The default workflow is offline after
